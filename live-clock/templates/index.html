@@ -1,0 +1,24 @@
+<h4>clock server</h4>
+<p id="clock">Here will be date|time</p>
+<script>
+	var clock = document.getElementById("clock");
+	
+	setInterval(() => {
+		// Get time from device
+		const d = new Date();
+		let cur_time = d.getTime();
+		console.log(cur_time);
+
+		// Sending time and asking for correct time from server
+		fetch("{{ url_for('time_feed') }}", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({time: cur_time}),
+		})
+			.then(response => {
+				response.text().then(t => {clock.innerHTML = t})
+			});
+	}, 1000);  
+</script>

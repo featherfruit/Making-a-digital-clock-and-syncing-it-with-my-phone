@@ -1,0 +1,6 @@
+flask
+Adafruit-GPIO
+RPi.GPIO
+Pillow
+wheel
+Adafruit-SSD1306
