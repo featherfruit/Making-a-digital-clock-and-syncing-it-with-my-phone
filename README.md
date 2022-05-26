@@ -13,7 +13,7 @@ from your device and takes time displayed on the clock that is the accurate time
 So its an application where input is taken from the user and based on it data is displayed back on the HTML.
 S
 ### Shell Scripts 
-Wrote shell scripts to automate the build and deploying the server.
+Scripts to start displaying time and run the web server at boot
 
 
 
