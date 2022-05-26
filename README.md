@@ -1,19 +1,30 @@
-# Making-a-digital-clock-and-syncing-it-with-my-phone
-For this project i'm working with circuit python and im using the [ADAFRUIT 1.12 OLED DISPLAY](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-monochrome-1-12-in-128x128-oled.pdf)
-, [Feather nRf54820](https://www.adafruit.com/product/4062) and ill also be using a wifi module.
-Phones are showing you the right time thanks to being constantly synchronized with the atomic clocks via cell towers, via internet, and via GPS etc. Now if the digital clock im making is also in sync with the following then its also in sync with my phone. If there is any noticable offset then I know i went wrong.
-keeping this general idea in mind im working.
+## **A DIGITAL CLOCK + SERVER THAT GIVES U (TIME) OFFSET**
+this is a little project where, I made a Digital Clock and a web server that tells you whats the time on the digital clock and lets you syncronise the time with the clock and gives you offset if there is any.
 
-I'm diving this into two parts for simplicity
-  1. making the digital clock itself
-- using I2C interfacing display and MC
-- writing code to display whatever i want
-- displaying accturate time using WIFI module?
 
-  2.Using [BlueFRUIT](https://learn.adafruit.com/circuitpython-nrf52840/overview) 
-  - send data( that is time on my digital clock ) using BLE and display that on my phone through the app
-  - check for offest and conclude that its in sync.
-  
-....i'll be writing more this is just a draft......
-  
-  ---- feather_fruit >-< --------
+### Making the Digital clock
+Firstly you need to set up your rasberry pi and install a bunch of thing. I'm using a Rasberry Pi 4B. This [guide](https://circuitdigest.com/microcontroller-projects/ssd1306-oled-display-with-raspberry-pi ) should be helpful. I've
+taken code from there and modified it according my requirments.
+the raspi and oled communicate using simple i2c.
+
+### Server
+Using Flask a web framawork written in python we've created a simple web application that takes time
+from your device and takes time displayed on the clock that is the accurate time from the rasberry pi's OS and calculates the offset and returns it to you.
+So its an application where input is taken from the user and based on it data is displayed back on the HTML.
+S
+### Shell Scripts 
+Wrote shell scripts to automate the build and deploying the server.
+
+
+
+
+
+#### Useful resources
+
+https://flask.palletsprojects.com/en/1.0.x/patterns/streaming/
+
+https://stackoverflow.com/questions/53111362/fun-clock-streaming-text-with-python-and-flask
+
+https://stackoverflow.com/questions/51669102/how-to-pass-data-to-html-page-using-flask
+
+https://www.guru99.com/introduction-to-shell-scripting.html
